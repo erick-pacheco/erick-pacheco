@@ -24,7 +24,6 @@
 
 
 ## 👀 I’m interested in ...
-* Watching videos about any random thing that comes to my mind and movies
 * Listen to podcast about personal development 
 * Before COVID-19, I played ping pong with friends after work - up to three times a week
 * Cooking Italian and French food and sipping wine
