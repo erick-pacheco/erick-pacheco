@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { selectors, useStateValue } from "../data";
+import Themer from "../theme/Themer";
 
 export default function Header() {
+  const [{ theme }] = useStateValue();
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className={`navbar navbar-expand-lg navbar-${theme} bg-${theme}`}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link className={`navbar-brand ${selectors.textColor(theme)}`} to="/">
             Erick Pacheco
           </Link>
           <button
@@ -48,6 +52,11 @@ export default function Header() {
                 >
                   <i class="fas fa-exclamation-circle"></i>
                 </Link>
+              </li>
+              <li className="nav-item">
+                <div className="nav-link">
+                  <Themer />
+                </div>
               </li>
             </ul>
           </div>

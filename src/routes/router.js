@@ -5,13 +5,12 @@ import {
   Switch,
   useLocation,
 } from "react-router-dom";
-import Card from "../Components/Card";
 import Header from "../Components/Header";
-import Stack from "../Components/Stack";
 import WelcomeHero from "../Components/WelcomeHero";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
+import Projects from "../Pages/Projects";
 
 // You can use the last <Route> in a <Switch> as a kind of
 // "fallback" route, to catch 404 errors.
@@ -34,7 +33,7 @@ export default function RenderRoutes() {
           <About />
         </Route>
         <Route path="/projects">
-          <Card />
+          <Projects />
         </Route>
         <Route path="/contact" component={Contact} />
         <Route path="/privacy" component={PrivacyPolicy} />

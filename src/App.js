@@ -1,9 +1,12 @@
-import './App.css';
-import RenderRoutes from './routes/router';
+import "./App.css";
+import { reducer, StateProvider, initialState } from "./data";
+import RenderRoutes from "./routes/router";
 
 function App() {
   return (
-    <RenderRoutes />
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <RenderRoutes />
+    </StateProvider>
   );
 }
 

@@ -1,0 +1,21 @@
+.bg-tiktok-red {
+  background-color: #ff0050 !important;
+  color: white;
+}
+
+.bg-tiktok-aqua {
+  background-color: #00f2ea !important;
+  color: black;
+}
+
+.bg-tiktok-aqua:hover {
+  color: white;
+}
+
+.tiktok {
+  text-shadow: 2px 2px #ff0050, -3px -3px #00f2ea;
+}
+
+.bg-dark {
+  background-color: black !important;
+}
