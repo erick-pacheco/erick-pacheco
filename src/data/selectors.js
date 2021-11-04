@@ -1,3 +1,3 @@
-export const textColor = (theme) =>
-  theme === "dark" ? "text-light" : "text-dark";
-export const bgColor = (theme) => (theme === "dark" ? "bg bg-dark" : "bg bg-light");
+export const textColor = (theme, classes) =>
+  theme === "dark" ? `text-light ${classes}` : `text-dark ${classes}`;
+export const bgColor = (theme, classes) => (theme === "dark" ? `bg bg-dark ${classes}` : `bg bg-light ${classes}`);
