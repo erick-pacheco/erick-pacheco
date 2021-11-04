@@ -1,10 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 import { selectors, useStateValue } from "../data";
 import Themer from "../theme/Themer";
 
 export default function Header() {
   const [{ theme }] = useStateValue();
+  const path = useLocation()
+  const { pathname } = path
 
   return (
     <>
@@ -27,25 +30,25 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className={`nav-link ${pathname === '/about' ? `tiktok-link active` : ''}`} to="/about">
                   About
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link active" to="/projects">
+                <Link className={`nav-link ${pathname === '/projects' ? `tiktok-link active` : ''}`} to="/projects">
                   Projects
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/contact">
+                <Link className={`nav-link ${pathname === '/contact' ? `tiktok-link active` : ''}`} to="/contact">
                   Contact
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   to="/privacy"
-                  className="nav-link"
+                  className={`nav-link ${pathname === '/privacy' && 'text-primary'} `}
                   data-bs-toggle="tooltip"
                   title="Site's Terms and Conditions"
                   data-bs-original-title="Another one here too"

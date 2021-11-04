@@ -1,6 +1,7 @@
 import React from "react";
 import { useStateValue, selectors } from "../data";
 import { types } from "../data/reducer";
+import { animated, animations } from './animations'
 
 export default function Themer() {
   const [{ theme }, dispatch] = useStateValue();
@@ -15,9 +16,13 @@ export default function Themer() {
 
   const themeIcon = (theme) =>
     theme === "dark" ? (
-      <i className="far fa-moon"></i>
+      <div className={animated('', animations.animate__fadeInDown)}>
+        <i className="far fa-moon"></i>&nbsp;{capitalizeFirstLetter(theme)}
+      </div>
     ) : (
-      <i className="far fa-sun"></i>
+      <div className={animated('', animations.animate__fadeInUp)}>
+        <i className="far fa-sun"></i>&nbsp;{capitalizeFirstLetter(theme)}
+      </div>
     );
 
   return (
@@ -27,17 +32,15 @@ export default function Themer() {
           className="form-check-input"
           type="checkbox"
           role="switch"
-          id="flexSwitchCheckDefault"
+          id="themer"
           onChange={toggleTheme}
-          
+          checked={theme === 'dark'}
         />
         <label
           className={`form-check-label ${selectors.textColor(theme)}`}
-          for="flexSwitchCheckDefault"
+          for="themer"
         >
           {themeIcon(theme)}
-          &nbsp;
-          {capitalizeFirstLetter(theme)}
         </label>
       </div>
     </>

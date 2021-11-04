@@ -1,8 +1,3 @@
-const pallete = {
-  TURQOISE: "#25F4EE",
-  RED: "#FE2C55",
-  WHITE: "#FFFFFF",
-  BLACK: "#000000",
-};
+import { animated, animations } from './animations'
+export { animations, animated }
 
-export { pallete };

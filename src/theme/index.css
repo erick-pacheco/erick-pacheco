@@ -19,3 +19,7 @@
 .bg-dark {
   background-color: black !important;
 }
+
+.tiktok-link {
+  text-decoration: underline overline dotted #ff0050 !important;
+}
