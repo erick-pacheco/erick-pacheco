@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 export default function MarkDown({ fetchUrl }) {
-  const [mdFile, setMdFile] = useState(`Just a link: https://reactjs.com.`);
+  const [mdFile, setMdFile] = useState(`loading.....`);
 
   useEffect(() => {
     fetch(fetchUrl)
       .then((response) => response.text())
       .then((text) => setMdFile(text))
-      .catch((err) => console.log(err));
+      .catch((err) => setMdFile(err.text()));
   }, []);
 
   return (

@@ -1,26 +1,25 @@
 import React from "react";
 import { selectors, useStateValue } from "../data";
 
-export default function Card() {
+export default function Card({ project }) {
   const [{ theme }] = useStateValue();
   return (
     <>
-      <div className="card my-3 animate__animated animate__fadeInLeft" style={{ width: "18rem" }}>
-        <img
-          src="https://miro.medium.com/max/1400/1*Fp43zS64ZPoWi4IAz1n3MA.jpeg"
-          className="card-img-top"
-          alt="..."
-        />
+      <div
+        className="card my-3 animate__animated animate__fadeInLeft"
+        style={{ width: "18rem" }}
+      >
+        <img src={project?.img} className="card-img-top" alt="..." />
         <div className={`card-body ${selectors.bgColor(theme)}`}>
-          <h5 className={selectors.textColor(theme, 'card-title')}>
-            Project !
+          <h5 className={selectors.textColor(theme, "card-title")}>
+            {project?.name}
           </h5>
+
           <p className={`card-text ${selectors.textColor(theme)}`}>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {project?.short_description}
           </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
+          <a href={project?.url} className="btn btn-primary">
+            See Live
           </a>
         </div>
       </div>
