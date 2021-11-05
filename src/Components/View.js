@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStateValue } from "../data";
 
 export default function View({ children }) {
@@ -7,6 +7,9 @@ export default function View({ children }) {
     minWidth: window.screen.availWidth,
     minHeight: window.screen.availHeight,
   };
+
+  useEffect(() => window.scrollTo(0, 0), [])
+
 
   return (
     <div style={style} className={`bg bg-${theme}`}>

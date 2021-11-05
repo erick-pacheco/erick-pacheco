@@ -30,8 +30,8 @@ export default function WelcomeHero() {
                 theme
               )}  animate__animated animate__fadeInDown`}
             >
-              The <span className="tiktok shadow-lg p-2">Ingenious</span>{" "}
-              <span className={selectors.textColor(theme)}>Full Stack</span>
+              The <span className="tiktok-link p-2">Ingenious</span>{" "}
+              <span className={selectors.textColor(theme)}>Dev</span>
             </h1>
             <p
               className={`lead ${selectors.textColor(

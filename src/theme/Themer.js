@@ -11,38 +11,28 @@ export default function Themer() {
     dispatch({ type: TOGGLE_THEME });
   };
 
+
   const capitalizeFirstLetter = (string) =>
     string.charAt(0).toUpperCase() + string.slice(1);
 
+  const opposite = theme => theme === 'dark' ? 'light' : 'dark'
+
   const themeIcon = (theme) =>
     theme === "dark" ? (
-      <div className={animated('', animations.animate__fadeInDown)}>
-        <i className="far fa-moon"></i>&nbsp;{capitalizeFirstLetter(theme)}
+      <div className={animated('yellow', animations.animate__fadeInDown)}>
+        <i className="far fa-sun"></i>&nbsp; Go {capitalizeFirstLetter(opposite(theme))} Mode
       </div>
     ) : (
-      <div className={animated('', animations.animate__fadeInUp)}>
-        <i className="far fa-sun"></i>&nbsp;{capitalizeFirstLetter(theme)}
+      <div className={animated('blue', animations.animate__fadeInUp)}>
+        <i className="far fa-moon"></i>&nbsp;Go {capitalizeFirstLetter(opposite(theme))} Mode
       </div>
     );
 
   return (
     <>
-      <div className="form-check form-switch">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="themer"
-          onChange={toggleTheme}
-          checked={theme === 'dark'}
-        />
-        <label
-          className={`form-check-label ${selectors.textColor(theme)}`}
-          for="themer"
-        >
-          {themeIcon(theme)}
-        </label>
-      </div>
+      <span type='button'onClick={toggleTheme}>
+        {themeIcon(theme)}
+      </span>
     </>
   );
 }

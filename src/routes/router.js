@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   useLocation,
+  useHistory
 } from "react-router-dom";
 import Header from "../Components/Header";
+import View from "../Components/View";
 import WelcomeHero from "../Components/WelcomeHero";
+import { selectors, useStateValue } from "../data";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
@@ -47,19 +50,31 @@ export default function RenderRoutes() {
 
 function NoMatch() {
   let location = useLocation();
+  let history = useHistory()
+  const [{ theme }] = useStateValue()
+
+  function delayandGo() {
+    setTimeout(() => history.push('/'), 3000)
+  }
+
+  useEffect(() => delayandGo(), [])
 
   return (
-    <div
-      className="container"
-      style={{
-        minHeight: window.screen.availHeight,
-        minWidth: window.screen.availWidth,
-      }}
-    >
-      <p>
-        No match for <code>{location.pathname}</code>
-      </p>
-      <p>returning home in 3 seconds</p>
-    </div>
+    <View>
+      <div
+        className="mx-5 p-5"
+        style={{
+          minHeight: window.screen.availHeight,
+          minWidth: window.screen.availWidth,
+        }}
+      >
+        <p className={selectors.textColor(theme, 'mx-5 p-5 tiktok-link')}>No match for route &nbsp;
+          <code className='py-1 px-5 bg bg-light'>{location.pathname}</code>
+        </p>
+        <p className={selectors.textColor(theme, 'mx-5')}>You'll return Home in 3 secs</p>
+      </div>
+    </View>
   );
 }
+
+
