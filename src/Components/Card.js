@@ -12,8 +12,8 @@ export default function Card() {
           alt="..."
         />
         <div className={`card-body ${selectors.bgColor(theme)}`}>
-          <h5 className={`card-title ${selectors.textColor(theme)}`}>
-            Card title
+          <h5 className={selectors.textColor(theme, 'card-title')}>
+            Project !
           </h5>
           <p className={`card-text ${selectors.textColor(theme)}`}>
             Some quick example text to build on the card title and make up the

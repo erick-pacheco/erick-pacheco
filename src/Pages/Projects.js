@@ -3,10 +3,8 @@ import Card from "../Components/Card";
 import Header from "../Components/Header";
 import PageTitle from "../Components/PageTitle";
 import View from "../Components/View";
-import { selectors, useStateValue } from "../data";
 
 export default function Projects() {
-  const [{ theme }] = useStateValue();
 
   return (
     <>
