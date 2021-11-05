@@ -8,6 +8,7 @@ export default function Header() {
   const [{ theme }] = useStateValue();
   const path = useLocation()
   const { pathname } = path
+  const navLinkCss = (match) => `nav-link ${pathname === match ? `tiktok-link shadow-lg active` : ''}`
 
   return (
     <>
@@ -30,30 +31,30 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className={`nav-link ${pathname === '/about' ? `tiktok-link active` : ''}`} to="/about">
+                <Link className={ navLinkCss('/about')} to="/about">
                   About
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link className={`nav-link ${pathname === '/projects' ? `tiktok-link active` : ''}`} to="/projects">
+                <Link className={navLinkCss('/projects')} to="/projects">
                   Projects
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link ${pathname === '/contact' ? `tiktok-link active` : ''}`} to="/contact">
+                <Link className={navLinkCss('/contact')} to="/contact">
                   Contact
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   to="/privacy"
-                  className={`nav-link ${pathname === '/privacy' && 'text-primary'} `}
+                  className={navLinkCss('/privacy')}
                   data-bs-toggle="tooltip"
                   title="Site's Terms and Conditions"
                   data-bs-original-title="Another one here too"
                 >
-                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i> Privacy
                 </Link>
               </li>
               <li className="nav-item">

@@ -39,8 +39,8 @@ export default function WelcomeHero() {
               )} animate__animated animate__fadeInLeft`}
             >
               Hello. My name is Erick Pacheco from Boston. I am learning to code
-              with React and other frameworks. I consider myself a backend
-              developer.
+              with React and other frameworks. I consider myself a Backend
+              developer but I am not afraid to mess with the Front End.
             </p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <Link

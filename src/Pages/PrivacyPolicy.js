@@ -1,8 +1,9 @@
 import React from "react";
-import Footer from "../Components/Footer";
+import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import View from "../Components/View";
 import { selectors, useStateValue } from "../data";
+import { animated, animations } from "../theme/animations";
 
 export default function PrivacyPolicy() {
   const [{ theme }] = useStateValue()
@@ -27,7 +28,7 @@ export default function PrivacyPolicy() {
               </a>
             </header>
             <main>
-              <h1 className={selectors.textColor(theme)}>We Do NOT Track Your Information </h1>
+              <h1 className={animated(selectors.textColor(theme), animations.animate__bounceInDown)}>We Do NOT Track Your Information </h1>
               <p className={`fs-5 col-md-8 ${selectors.textColor(theme)}`}>
                 Do Not Track (DNT) is a way to keep users’ online behavior from being followed across the Internet by behavioral advertisers, analytics companies, and social media sites. It combines both technology (a way to let users signal whether they want to be tracked) as well as a policy framework for how companies should respond to that signal.
 
@@ -43,7 +44,7 @@ export default function PrivacyPolicy() {
               <hr className="col-3 col-md-2 mb-5" />
               <div className="row g-5">
                 <div className="col-md-6">
-                  <h2 className={selectors.textColor(theme)}>Using Website Template</h2>
+                  <h2 className={selectors.textColor(theme)}>Using This Website Template</h2>
                   <p className={selectors.textColor(theme)}>
                     Quickly and easily get started with Bootstrap's compiled,
                     production-ready files with this barebones example featuring some
@@ -59,11 +60,11 @@ export default function PrivacyPolicy() {
                   </p>
                   <ul className={`icon-list ${selectors.textColor(theme)}`}>
                     <li>
-                      <a href="#" class="link-info">Fork Template from GitHub</a>
+                      <a href="https://github.com/erick-pacheco/erick-pacheco" class="link-info">Fork Template from GitHub</a>
 
                     </li>
                     <li >
-                      <a href="#" class="link-secondary">Support</a>
+                      <Link to="/contact" class="link-info">Support</Link>
                     </li>
                   </ul>
                 </div>

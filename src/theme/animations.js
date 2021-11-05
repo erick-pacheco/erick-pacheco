@@ -11,7 +11,10 @@ const animations = {
     animate__fadeInDown: 'animate__fadeInDown',
     animate__fadeInLeft: 'animate__fadeInLeft',
     animate__fadeInRight: 'animate__fadeInRight',
-    animate__fadeInUp: 'animate__fadeInUp'
+    animate__fadeInUp: 'animate__fadeInUp',
+    animate__fadeInUpBig: 'animate__fadeInUpBig',
+    animate__bounceInDown: 'animate__bounceInDown'
+
 }
 
 // return an animated function that takes in classes of the user and the animation class
