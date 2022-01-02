@@ -2,7 +2,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
+  Switch,
   useLocation,
 } from "react-router-dom";
 import Header from "../Components/Header";
@@ -17,7 +17,7 @@ import Projects from "../Pages/Projects";
 export default function RenderRoutes() {
   return (
     <Router>
-      <Routes>
+      <Switch>
         <Route exact path="/" element={<WelcomeHero />} />
         <Route
           path="/about"
@@ -32,7 +32,7 @@ export default function RenderRoutes() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="*" element={<NoMatch />} />
-      </Routes>
+      </Switch>
     </Router>
   );
 }
