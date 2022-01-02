@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "git add . && git commit -m \"Deploys website\" && git push origin v2-react && npm run build && clear && firebase deploy"
+    "deploy": "git add . && git commit -m \"Deploys website to firebase via erick-pacheco.web.app\" && git push origin v2-react && npm run build && clear && firebase deploy"
   },
   "eslintConfig": {
     "extends": [
