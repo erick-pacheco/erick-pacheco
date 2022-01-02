@@ -51,7 +51,7 @@ function NoMatch() {
           minWidth: window.screen.availWidth,
         }}
       >
-        <p className={selectors.textColor(theme, "mx-5 p-5 tiktok-link")}>
+        <p className={selectors.textColor(theme, "mx-5 py-5 tiktok-link")}>
           No match for route &nbsp;
           <code className="py-1 px-5 bg bg-light">{location.pathname}</code>
         </p>
