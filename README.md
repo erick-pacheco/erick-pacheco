@@ -23,3 +23,6 @@
 
 
 ## 👀 I’m interested in ...
+I am interested in building awesome, easy-to-use, software with intuitive UI and memorable UX. 
+
+Wanna take a change on me? Let's get <a href='/contact'>in touch</a>
